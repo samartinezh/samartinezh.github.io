@@ -1,0 +1,170 @@
+/*Variables utilizadas*/
+:root {
+	--fuente: 'Fira Code', monospace;
+	--tamaño__texto__uno: 1.125rem;
+	--tamaño__texto__dos: 2rem;
+	--color__texto: #fff;
+	--tamaño__titulos: 2.5rem;
+	--color__titulos: #45cfdd;
+	--color__fondo: #272829;
+	--color__github: rgba(50, 115, 220, 0.479);
+	--color__corazon: #e74646;
+}
+
+/*Estilos de todo el contenido de la landing page*/
+body {
+	background-color: var(--color__fondo);
+}
+
+.cabecera {
+	height: 100vh;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	gap: 10px;
+	overflow: hidden;
+	align-items: center;
+}
+
+.titulo {
+	color: var(--color__titulos);
+	font-family: var(--fuente);
+	font-size: var(--tamaño__titulos);
+}
+
+.texto {
+	color: var(--color__texto);
+	font-family: var(--fuente);
+	font-size: var(--tamaño__texto__dos);
+}
+
+.parrafos,
+.skill h3 {
+	color: var(--color__texto);
+	font-family: var(--fuente);
+	font-size: var(--tamaño__texto__uno);
+}
+
+.texto__cabecera {
+	grid-column: 1/7;
+}
+
+.boton__github {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.btn__github {
+	background-color: var(--color__github);
+	color: var(--color__texto);
+	text-decoration: none;
+	padding: 10px 20px;
+	text-align: center;
+	border: 3px solid #3273dc;
+	border-radius: 5px;
+	font-family: var(--fuente);
+	font-size: var(--tamaño__texto__uno);
+	font-weight: 500;
+	margin-right: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.imagen {
+	width: 100%;
+	height: auto;
+	grid-column: 7/13;
+}
+
+.imagen img {
+	width: 100%;
+	max-width: 350px;
+	display: block;
+	margin: auto;
+	padding-top: 20px;
+}
+
+.skills {
+	grid-column: 1/-1;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-top: 30px;
+}
+
+.skill {
+	width: 15%;
+	max-width: 120px;
+	text-align: center;
+}
+
+.skill img {
+	width: 100px;
+	margin-bottom: -30px;
+}
+
+.texto__pie__pagina {
+	grid-column: 1/-1;
+	text-align: center;
+}
+
+.texto__pie__pagina p {
+	color: var(--color__titulos);
+}
+
+.corazon {
+	color: var(--color__corazon);
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 800px) {
+	.cabecera {
+		height: 100vh;
+	}
+
+	.grid {
+		gap: 10px;
+	}
+
+	.texto__cabecera,
+	.imagen {
+		grid-column: 1/-1;
+	}
+
+	.imagen img {
+		width: 100%;
+		max-width: 320px;
+	}
+
+	.skill {
+		width: 40%;
+		max-width: 160px;
+		text-align: center;
+	}
+
+	.skill img {
+		width: 120px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.imagen img {
+		max-width: 320px;
+	}
+
+	.grid {
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	}
+}
